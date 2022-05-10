@@ -46,6 +46,16 @@
                 <br><br><br><br>
                 <h3 class="task-2">Task2</h3>
                 <br>
+                <input id="input" type="text">
+                <select class="ol_color">
+                    <option value="1">Синій</option>
+                    <option value="2">Зелений</option>
+                    <option value="3">Жовтий</option>
+                    <option value="4">Червоний</option>
+                    <option value="5">Помаранчевий</option>
+                    <option value="6">Чорний</option>
+                </select>
+                <button class="button-ol">OK</button>
                 <div class="page__ol">
                     <ol class="page-ol" type="1">
                         <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
@@ -118,62 +128,26 @@
                     </table>
                 </div>
                 <br><br>
-                <div class="img">
-                    <img class="img-1" src="./img/1.jpeg" alt="">
-                    <img class="img-2" src="./img/2.jpeg" alt="">
+                <div class="gallery__slider">
+                    <div class="gallery__slider__item">
+                        <img class="img-1" src="./img/1.jpeg" alt="">
+                    </div>
+                    <div class="gallery__slider__item">
+                        <img class="img-2" src="./img/2.jpeg" alt="">
+                    </div>
+                    <div class="gallery__slider__item" >
+                        <img class="img-1" src="./img/1.jpeg" alt="">
+                    </div>
+                    <div class="gallery__slider__item">
+                        <img class="img-2" src="./img/2.jpeg" alt="">
+                    </div>
                 </div>
+                <br><br><br><br>
             </div>
         </main>
-        <script>
-            let buttonTask1 = document.querySelector('#menu__task-1')
-            let buttonTask2 = document.querySelector('#menu__task-2')
-            let buttonTask3 = document.querySelector('#menu__task-3')
-            const menuLinks = document.querySelectorAll('.menu__link[data-goto]')
-            buttonTask1.addEventListener('mouseenter', function () {
-                this.style.color = '#CFCFCF'
-                this.style.borderBottom = '1.5px solid #CFCFCF'
-
-            })
-            buttonTask1.addEventListener('mouseleave', function () {
-                this.style.color = 'white'
-                this.style.borderBottom = '0'
-            })
-            buttonTask2.addEventListener('mouseenter', function () {
-                this.style.color = '#CFCFCF'
-                this.style.borderBottom = '1.5px solid #CFCFCF'
-            })
-            buttonTask2.addEventListener('mouseleave', function () {
-                this.style.color = 'white'
-                this.style.borderBottom = '0'
-            })
-            buttonTask3.addEventListener('mouseenter', function () {
-                this.style.color = '#CFCFCF'
-                this.style.borderBottom = '1.5px solid #CFCFCF'
-            })
-            buttonTask3.addEventListener('mouseleave', function () {
-                this.style.color = 'white'
-                this.style.borderBottom = '0'
-            })
-            if (menuLinks.length > 0){
-                menuLinks.forEach(menuLinks => {
-                    menuLinks.addEventListener('click', onMenuLinkClick)
-                })
-                function onMenuLinkClick(e) {
-                    const menuLink = e.target
-                    if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)){
-                        const gotoBlock = document.querySelector(menuLink.dataset.goto)
-                        const  gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('.header').offsetHeight
-
-                        window.scrollTo({
-                            top: gotoBlockValue,
-                            behavior: 'smooth'
-                        })
-                        e.preventDefault()
-                    }
-                }
-            }
-
-        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="main.js"></script>
+        <script src="slick.min.js"></script>
     </div>
 
 </body>
